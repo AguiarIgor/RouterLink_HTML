@@ -1,0 +1,77 @@
+<!--
+Mensagem do Criador:
+
+Explorei uma parte do conteúdo de CSS fornecido pelo site
+que foi mandado junto as instruções para fazer o HTML (https://materializecss.com/),
+mas resolvi fazer algumas alterações que eu achei necessário
+em relação principalmente a tamanhos. Este site não é 100% portável
+a outros tipos de tela além da tela do criador, fazer uma portabilidade usaria
+muito tempo e recursos, então o criador decidiu não colocar essa "feature".
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Cadastro</title>
+  <link rel="icon" type="image/png" href="./icon/Guia_Icon.png"/>
+  <link href="./css/style.css" rel="stylesheet"/>
+</head>
+<body>
+  <form>
+    <h1>Cadastre-se</h1>
+    <div class="form-container">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome">
+      <br/><br/>
+
+      <label for="genero">Gênero:</label>
+      <select id="genero" name="genero">
+        <option value="null">Selecione um Gênero</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="outro">Outro</option>
+      </select>
+    </div>
+
+    <div class="form-container" style="height: 100px;">
+      <label for="data-nascimento">Data de Nascimento (dd/mm/aaaa):</label>
+      <input type="date" id="data-nascimento" onchange="setIdade()" name="data-nascimento">
+      <br><br>
+
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" name="idade" readonly>
+      <br><br>
+    </div>
+    
+    <div class="form-container special2">
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" onchange="getLogradouro()" name="cep">
+      <br><br>
+      
+      <label for="rua">Rua:</label>
+      <input type="text" id="rua" name="logradouro" disabled>
+      <br><br>
+      
+      <label for="bairro">Bairro:</label>
+      <input type="text" id="bairro" name="bairro" disabled>
+      <br><br>
+      
+      <label for="cidade">Cidade:</label>
+      <input type="text" id="cidade" name="localidade" disabled>
+      <br><br>
+      
+      <label for="estado">Estado:</label>
+      <input type="text" id="estado" name="uf" disabled>
+      <br><br>
+      <div style="text-align: center;">
+        <input type="submit" value="Enviar">
+      </div>
+    </div>
+  </form>
+  <script src="./js/script.js"></script>
+</body>
+</html>
+
